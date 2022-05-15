@@ -9,6 +9,14 @@ export default{
             type: "string"
         },
         {
+            name: "companyLogo",
+            title: "Company Logo",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+        },
+        {
             name: "fromDate",
             title: "From Date",
             type: "date"
@@ -30,4 +38,21 @@ export default{
             of: [{type: 'block'}]
         },
     ],
+    preview:{
+        select: {
+            title: "companyName",
+            companyLogo: "companyLogo",
+            jobTitle: "jobTitle",
+            fromDate: "fromDate",
+            toDate: "toDate",            
+        },
+        prepare(selection){
+            const {title, companyLogo, jobTitle, fromDate, toDate} = selection;
+            return {
+                media: companyLogo,
+                title: title,
+                subtitle: `${jobTitle} - ${fromDate} - ${toDate ? toDate: 'Current'}`,
+            }
+        }
+    }
 }
