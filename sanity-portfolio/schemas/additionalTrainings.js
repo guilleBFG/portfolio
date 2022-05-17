@@ -11,13 +11,12 @@ export default{
         {
             name: "degreeTitle",
             title: "Degree Obtained",
-            type: "string"
+            type: "stringLocale"
         },
         {
             name: "degreeDescription",
             title: "Degree Description",
-            type: 'array', 
-            of: [{type: 'block'}]
+            type: 'blockLocale', 
         },
     ],
 }

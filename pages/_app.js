@@ -1,19 +1,12 @@
 import "../styles/globals.css";
-import Link from "next/link";
-import {sanityClient, urlFor} from '../lib/sanity';
+import { Transition } from "@headlessui/react";
+import { sanityClient, urlFor } from "../lib/sanity";
+import Navbar from "../components/Navbar";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <nav className="text-3xl font-bold ">
-        <div>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/resume">
-            <a>Resume</a>
-          </Link>
-        </div>
-      </nav>
+      <Navbar></Navbar>
       <main>
         <Component {...pageProps} />
       </main>

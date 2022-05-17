@@ -29,13 +29,12 @@ export default{
         {
             name: "jobTitle",
             title: "Job Title",
-            type: "string"
+            type: "stringLocale"
         },
         {
             name: "jobDescription",
             title: "Job Description",
-            type: 'array', 
-            of: [{type: 'block'}]
+            type: 'blockLocale'
         },
     ],
     preview:{

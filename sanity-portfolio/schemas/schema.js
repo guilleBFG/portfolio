@@ -4,13 +4,13 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-
+import stringLocale from './stringLocale'
+import blockLocale from './blockLocale'
 import user from './user'
 import workHistory from './workHistory'
 import education from './education'
 import additionalTrainings from './additionalTrainings'
 import resume from './resume'
-
 import projects from './projects'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,6 +21,6 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     user, workHistory, education, additionalTrainings, resume,
-    projects
+    projects, stringLocale, blockLocale
   ]),
 })

@@ -19,7 +19,7 @@ export default {
     {
       name: "jobTitle",
       title: "Job Title",
-      type: "string",
+      type: "stringLocale",
     },
     {
       title: "Main email",
@@ -43,14 +43,12 @@ export default {
     {
       name: "introduction",
       title: "Introduction",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "blockLocale",
     },
     {
       name: "coverLetter",
       title: "Cover Letter",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "blockLocale",
     },
   ],
 };
