@@ -1,12 +1,11 @@
 import "../styles/globals.css";
-import { Transition } from "@headlessui/react";
-import { sanityClient, urlFor } from "../lib/sanity";
 import Navbar from "../components/Navbar";
+import { sanityClient, urlFor } from "../lib/sanity.js";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar/>
       <main>
         <Component {...pageProps} />
       </main>

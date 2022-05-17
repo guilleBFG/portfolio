@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-import { sanityClient, urlFor } from "../lib/sanity.js";
-import PortableText from "react-portable-text";
+import Herobutton from "../components/herobutton";
+import { sanityClient } from "../lib/sanity";
 
 const userQuery = `*[_type == 'user'][0]`;
 export default function Home({ user }) {
@@ -15,29 +14,7 @@ export default function Home({ user }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-        <Image
-          className="w-24 h-24 rounded-full mx-auto "
-          width={150}
-          height={150}
-          src={urlFor(user.profilePicture).url()}
-          alt="Profile Picture"
-        />
-        <div className="pt-6 md:p-10 text-center md:text-left space-y-4 text-teal-600">
-          <blockquote>
-            <PortableText
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-              content={user.introduction}
-              className=""
-              serializers={{
-                h1: (props) => <h1 {...props} />,
-                h2: (props) => <h1 {...props} />,
-              }}
-            />
-          </blockquote>
-        </div>
-      </figure>
+      <Herobutton {...user}/>
     </div>
   );
 }
