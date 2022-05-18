@@ -41,7 +41,7 @@ export default{
         select: {
             title: "companyName",
             companyLogo: "companyLogo",
-            jobTitle: "jobTitle",
+            jobTitle: "jobTitle.en",
             fromDate: "fromDate",
             toDate: "toDate",            
         },

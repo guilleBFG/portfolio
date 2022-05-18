@@ -11,7 +11,7 @@ export default {
     },
     {
       name: "workhistory",
-      title: "WorkHistory",
+      title: "Work History",
       type: "array",
       of: [{ type: "reference", to: { type: "workHistory" }}],
     },
