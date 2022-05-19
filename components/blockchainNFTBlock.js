@@ -1,31 +1,32 @@
-import { React, useState, useEffect } from 'react'
-import Script from 'next/script';
+import { useState, useEffect } from "react";
 
-function BlockchainNFTBlock() {
-    const [NftData, setNftData] = useState([]);
+function BlockchainNFTBlock({ user }) {
+  const [nftData, setNftData] = useState([]);
+  const fetchUrl = `https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:${user.nftWallet}`;
 
+  useEffect(() => {
     const getNFt = async () => {
-        try {
-            if (!NftData) {
-                const response = await fetch('https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xC564eD39026C5ddf79408548B6a237391591F7A7');
-                const data = await response.json();
-                debugger;
-                setNftData(data.items);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+      if (!nftData) {
 
-    useEffect(() => {
-        getNFt();
-    }, [NftData]);
+        const response = await fetch(
+          'https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xC564eD39026C5ddf79408548B6a237391591F7A7'
+        )
+        debugger;
+        console.log(response);
+        const data = await response.json()
+        console.log(data);
+        setNftData(data.items)
+        console.log(nftData);
+      }
+    };
+    getNFt();
+  }, [nftData]);
 
-    return (
-        <>
-
-        </>
-    )
+  return (
+    <>
+      <div>{nftData}</div>
+    </>
+  );
 }
 
-export default BlockchainNFTBlock
+export default BlockchainNFTBlock;

@@ -41,6 +41,11 @@ export default {
       type: "string",
     },
     {
+      title: "NFT Wallet",
+      name: "nftWallet",
+      type: "string",
+    },
+    {
       name: "introduction",
       title: "Introduction",
       type: "blockLocale",

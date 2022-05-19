@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <main>
           <Component {...pageProps} />
           <Herobutton {...pageProps} />
-          <BlockchainNFTBlock/>
+          <BlockchainNFTBlock {...pageProps}/>
         </main>
       </IntlProvider>
     </>
