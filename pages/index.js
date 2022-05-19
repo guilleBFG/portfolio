@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Herobutton from "../components/herobutton";
-import Link from "next/link";
 import { sanityClient } from "../lib/sanity";
 import { useIntl } from "react-intl";
 
@@ -26,7 +24,6 @@ export default function Home({ user }) {
         <link rel="alternate" href="/" hrefLang="en" />
         <link rel="alternate" href="/es" hrefLang="fr" />
       </Head>
-      <Herobutton {...user}/>
     </div>
   );
 }
