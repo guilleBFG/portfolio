@@ -4,7 +4,7 @@ import { IntlProvider } from "react-intl";
 import { Languages } from "../lang/languajes";
 import { useRouter } from "next/router";
 import Herobutton from "../components/herobutton";
-import BlockchainNFT from "../components/blockchainNFT";
+import BlockchainNFTBlock from "../components/blockchainNFTBlock";
 function MyApp({ Component, pageProps }) {
   const { locale } = useRouter();
   return (
@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
         <Navbar />
         <main>
           <Component {...pageProps} />
-          <Herobutton {...pageProps.user} />
-          <BlockchainNFT/>
+          <Herobutton {...pageProps} />
+          <BlockchainNFTBlock/>
         </main>
       </IntlProvider>
     </>

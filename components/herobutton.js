@@ -4,7 +4,7 @@ import { urlFor } from "../lib/sanity";
 import PortableText from "react-portable-text";
 import { useRouter } from "next/router";
 
-function Herobutton(user) {
+function Herobutton({user}) {
   const { locale } = useRouter();
   let content;
   switch (locale) {
