@@ -5,5 +5,6 @@
     "page.home.description": "",
     "page.navbar.home": "Home",
     "page.navbar.projects":"Projects",
-    "page.navbar.resume":"Resume"    
+    "page.navbar.resume":"Resume",
+    "page.blockchainSection.title":"Blockchain Projects Certificates"  
   }
