@@ -6,21 +6,21 @@ import { useRouter } from "next/router";
 
 function Herobutton({user}) {
   const { locale } = useRouter();
-  let content;
+  let content='';
   switch (locale) {
     case "es":
-      content = user.introduction.es;
+      content = user?.introduction?.es;
       break;
     case "en":
-      content = user.introduction.en;
+      content = user?.introduction?.en;
 
       break;
     case "pt":
-      content = user.introduction.pt;
+      content = user?.introduction?.pt;
 
       break;
     default:
-      content = user.introduction.en;
+      content = user?.introduction?.en;
       break;
   }
 
