@@ -6,6 +6,8 @@
     "page.navbar.home": "Inicio",
     "page.navbar.projects":"Proyectos",
     "page.navbar.resume":"CV",
-    "page.blockchainSection.title":"Proyectos de Blockchain Certificados NFT"  
+    "page.blockchainSection.title":"Proyectos de Blockchain Certificados NFT",
+    "page.blockchainSection.opensea": "Ver en Opensea"
+
 
   }

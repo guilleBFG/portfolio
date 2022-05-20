@@ -1,22 +1,30 @@
 import React from "react";
 import Image from "next/image";
+import { useIntl } from "react-intl";
 
 function NftCard({ nft }) {
-  console.log(nft.meta.content[0].mimeType);
-
   const mimeType = `${nft.meta.content[0].mimeType}`;
+  const intl = useIntl();
+  const openseaUrlParametters = nft.id.toString().split(":");
+  const openseaUrl = `https://opensea.io/assets/matic/${openseaUrlParametters[1]}/${openseaUrlParametters[2]}`;
+
 
   return (
-    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="max-w-sm  rounded-lg border  shadow-md bg-gray-600 border-gray-500">
       {mimeType === "video/mp4" && (
-        <video autoPlay controls muted src={nft.meta.content[0].url}></video>
+        <video
+          className="rounded-lg"
+          autoPlay
+          muted
+          src={nft.meta.content[0].url}
+        ></video>
       )}
       {mimeType !== "video/mp4" && (
         <div>
           <Image
-            className="object-fill"
-            width={380}
-            height={300}
+            className="object-fill rounded-lg"
+            width={382}
+            height={211}
             src={nft.meta.content[0].url}
             alt={nft.meta.description}
           />
@@ -25,7 +33,18 @@ function NftCard({ nft }) {
       <div className="p-6 text-white text-bold text-center">
         {nft.meta.name}
       </div>
-      <div className="p-4 text-white text-center">{nft.meta.description}</div>
+      <div className="text-center items-center">
+          <a
+            href={openseaUrl}
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              {intl.formatMessage({ id: "page.blockchainSection.opensea" })}
+            </button>
+          </a>
+      </div>
+      {/*<div className="p-4 text-white text-center">{nft.meta.description}</div>*/}
     </div>
   );
 }

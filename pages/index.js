@@ -1,22 +1,22 @@
 import Head from "next/head";
 import { sanityClient } from "../lib/sanity";
 import { useIntl } from "react-intl";
-
+import Herobutton from "../components/herobutton";
+import BlockchainNFTBlock from "../components/blockchainNFTBlock";
 
 const userQuery = `*[_type == 'user'][0]`;
 export default function Home({ user }) {
   const intl = useIntl();
   const title = intl.formatMessage({ id: "page.home.head.title" });
-  const description = intl.formatMessage({ id: "page.home.head.meta.description" });
+  const description = intl.formatMessage({
+    id: "page.home.head.meta.description",
+  });
 
   return (
     <div>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content={description}
-        />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
 
         {/* Add hreflang links */}
@@ -24,6 +24,9 @@ export default function Home({ user }) {
         <link rel="alternate" href="/" hrefLang="en" />
         <link rel="alternate" href="/es" hrefLang="fr" />
       </Head>
+
+      <Herobutton user = {user} />
+      <BlockchainNFTBlock user = {user} />
     </div>
   );
 }

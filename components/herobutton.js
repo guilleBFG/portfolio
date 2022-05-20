@@ -5,6 +5,7 @@ import PortableText from "react-portable-text";
 import { useRouter } from "next/router";
 
 function Herobutton({user}) {
+
   const { locale } = useRouter();
   let content='';
   switch (locale) {
@@ -26,7 +27,7 @@ function Herobutton({user}) {
 
   return (
     <>
-      <figure className="flex flex-wrap bg-slate-100  p-8 md:p-0 dark:bg-blue-300 items-center">
+      <figure className="flex flex-wrap bg-gray-800 border-gray-700 p-8 md:p-0 bg-black-800 items-center">
         <div className="grid grid-cols-3 gap-4 ">
           <div></div>
           <div className="mx-auto">
