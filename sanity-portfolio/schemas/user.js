@@ -41,6 +41,11 @@ export default {
       type: "string",
     },
     {
+      title: "GitHub",
+      name: "github",
+      type: "string",
+    },
+    {
       title: "NFT Wallet",
       name: "nftWallet",
       type: "string",
