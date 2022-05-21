@@ -64,13 +64,28 @@ function Navbar({ user }) {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <Link key={user.telephone} href={`https://web.whatsapp.com/send?phone=${user.telephone}`}>
+            <Link
+              key={user.telephone}
+              href={`https://web.whatsapp.com/send?phone=${user.telephone}`}
+            >
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
                 target={"_blank"}
                 rel={"noreferrer"}
               >
                 <Icon icon="logos:whatsapp" />
+              </a>
+            </Link>
+            <Link
+              key={user.github}
+              href={user.github}
+            >
+              <a
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                target={"_blank"}
+                rel={"noreferrer"}
+              >
+                <Icon icon="icon-park:github" />
               </a>
             </Link>
             <Link key={user.email} href={`mailto:${user.email}`}>
