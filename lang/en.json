@@ -7,6 +7,7 @@
     "page.navbar.projects":"Projects",
     "page.navbar.resume":"Resume",
     "page.blockchainSection.title":"Blockchain Projects Certificates",
-    "page.blockchainSection.opensea": "See in Opensea"
+    "page.blockchainSection.opensea": "See in Opensea",
+    "page.blockchainSection.loading": "Loading..."
 
   }

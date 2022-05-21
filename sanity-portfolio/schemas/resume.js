@@ -10,22 +10,22 @@ export default {
       to: { type: "user" },
     },
     {
-      name: "workhistory",
+      name: "workhistorys",
       title: "Work History",
       type: "array",
       of: [{ type: "reference", to: { type: "workHistory" }}],
     },
     {
-      name: "education",
+      name: "educations",
       title: "Education",
       type: "array",
-      of: [{ type: "education" }],
+      of: [{ type: "reference", to: { type: "education" } }],
     },
     {
       name: "additionalTrainings",
       title: "Additional Training - General knoledge",
       type: "array",
-      of: [{ type: "additionalTrainings" }],
+      of: [{ type: "reference", to: { type: "additionalTrainings" }}],
     },
   ],
 };

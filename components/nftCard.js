@@ -39,7 +39,7 @@ function NftCard({ nft }) {
             target={"_blank"}
             rel={"noreferrer"}
           >
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            <button className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  text-white font-bold py-2 px-4 rounded-full">
               {intl.formatMessage({ id: "page.blockchainSection.opensea" })}
             </button>
           </a>

@@ -4,10 +4,9 @@ import { urlFor } from "../lib/sanity";
 import PortableText from "react-portable-text";
 import { useRouter } from "next/router";
 
-function Herobutton({user}) {
-
+function Herobutton({ user }) {
   const { locale } = useRouter();
-  let content='';
+  let content = "";
   switch (locale) {
     case "es":
       content = user?.introduction?.es;
@@ -30,7 +29,7 @@ function Herobutton({user}) {
       <figure className="flex flex-wrap bg-gray-800 border-gray-700 p-8 md:p-0 bg-black-800 items-center">
         <div className="grid grid-cols-3 gap-4 ">
           <div></div>
-          <div className="mx-auto">
+          <div className="mx-auto bg-gray-800 border-gray-700 text-base text-white text-bold text-center">
             <Image
               className="mx-auto w-24 h-24 rounded-full"
               width={150}
@@ -54,9 +53,10 @@ function Herobutton({user}) {
                 }}
               />
             </blockquote>
+           
           </div>
         </div>
-      </figure>      
+      </figure>
     </>
   );
 }

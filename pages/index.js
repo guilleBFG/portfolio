@@ -3,6 +3,7 @@ import { sanityClient } from "../lib/sanity";
 import { useIntl } from "react-intl";
 import Herobutton from "../components/herobutton";
 import BlockchainNFTBlock from "../components/blockchainNFTBlock";
+import Navbar from "../components/Navbar";
 
 const userQuery = `*[_type == 'user'][0]`;
 export default function Home({ user }) {
@@ -24,9 +25,8 @@ export default function Home({ user }) {
         <link rel="alternate" href="/" hrefLang="en" />
         <link rel="alternate" href="/es" hrefLang="fr" />
       </Head>
-
-      <Herobutton user = {user} />
-      <BlockchainNFTBlock user = {user} />
+      <Herobutton user={user} />
+      <BlockchainNFTBlock user={user} />
     </div>
   );
 }

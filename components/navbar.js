@@ -2,11 +2,11 @@ import { React, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
+import { Icon } from "@iconify/react";
 
-function Navbar() {
+function Navbar({ user }) {
   const [active, setActive] = useState(false);
   const { locales } = useRouter();
-
   const intl = useIntl();
 
   const menuItems = [
@@ -15,16 +15,15 @@ function Navbar() {
       url: "/",
     },
     {
+      title: intl.formatMessage({ id: "page.navbar.resume" }),
+      url: "/resume",
+    },
+    {
       title: intl.formatMessage({ id: "page.navbar.projects" }),
       url: "/projects",
     },
-    {
-      title:intl.formatMessage({ id: "page.navbar.resume" }),
-      url: "/resume",
-    },
   ];
 
-  
   const handleClick = () => {
     setActive(!active);
   };
@@ -40,7 +39,7 @@ function Navbar() {
         </Link>
 
         <button
-          className=" inline-flex p-3 hover:bg-blue-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+          className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  inline-flex p-3 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
           onClick={handleClick}
         >
           <svg
@@ -65,16 +64,46 @@ function Navbar() {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+            <Link key={user.telephone} href={`https://web.whatsapp.com/send?phone=${user.telephone}`}>
+              <a
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                target={"_blank"}
+                rel={"noreferrer"}
+              >
+                <Icon icon="logos:whatsapp" />
+              </a>
+            </Link>
+            <Link key={user.email} href={`mailto:${user.email}`}>
+              <a
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                target={"_blank"}
+                rel={"noreferrer"}
+              >
+                <Icon icon="logos:google-gmail" />
+              </a>
+            </Link>
+            <Link key={user.linkedIn} href={user.linkedIn}>
+              <a
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                target={"_blank"}
+                rel={"noreferrer"}
+              >
+                <Icon icon="logos:linkedin-icon" />
+              </a>
+            </Link>
             {menuItems?.map((menuItem) => (
               <Link key={menuItem.title} href={menuItem.url}>
-                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-600 hover:text-white ">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500  hover:text-white ">
                   {menuItem.title}
                 </a>
               </Link>
             ))}
             {[...locales].sort().map((locale) => (
               <Link key={locale} href="/" locale={locale}>
-                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-600 hover:text-white ">
+                <a
+                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center
+                bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500  hover:text-white "
+                >
                   {locale}
                 </a>
               </Link>
