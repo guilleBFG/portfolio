@@ -19,12 +19,18 @@ export default{
         {
             name: "fromDate",
             title: "From Date",
-            type: "date"
+            type: "date",
+            options: {
+                dateFormat: 'DD-MM-YYYY',
+              }
         },
         {
             name: "toDate",
             title: "To Date",
-            type: "date"
+            type: "date",
+            options: {
+                dateFormat: 'DD-MM-YYYY',
+              }
         },
         {
             name: "jobTitle",

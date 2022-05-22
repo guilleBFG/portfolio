@@ -69,41 +69,38 @@ function Navbar({ user }) {
               href={`https://web.whatsapp.com/send?phone=${user.telephone}`}
             >
               <a
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300 "
                 target={"_blank"}
                 rel={"noreferrer"}
               >
-                <Icon icon="logos:whatsapp" />
+                <Icon width="30" height="30" icon="logos:whatsapp" />
               </a>
             </Link>
-            <Link
-              key={user.github}
-              href={user.github}
-            >
+            <Link key={user.github} href={user.github}>
               <a
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
                 rel={"noreferrer"}
               >
-                <Icon icon="icon-park:github" />
+                <Icon width="30" height="30" icon="jam:github-circle" />
               </a>
             </Link>
             <Link key={user.email} href={`mailto:${user.email}`}>
               <a
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
                 rel={"noreferrer"}
               >
-                <Icon icon="logos:google-gmail" />
+                <Icon width="30" height="30" icon="logos:google-gmail" />
               </a>
             </Link>
             <Link key={user.linkedIn} href={user.linkedIn}>
               <a
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center"
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
                 rel={"noreferrer"}
               >
-                <Icon icon="logos:linkedin-icon" />
+                <Icon width="30" height="30" icon="logos:linkedin-icon" />
               </a>
             </Link>
             {menuItems?.map((menuItem) => (
@@ -119,7 +116,31 @@ function Navbar({ user }) {
                   className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center
                 bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500  hover:text-white "
                 >
-                  {locale}
+                  {locale === "pt" && (
+                    <Icon
+                      icon="emojione:flag-for-brazil"
+                      width="30"
+                      height="30"
+                      inline={true}
+                    />
+                  )}
+                  {locale === "en" && (
+                    <Icon
+                      icon="emojione:flag-england"
+                      width="30"
+                      height="30"
+                      inline={true}
+                    />
+                  )}
+
+                  {locale === "es" && (
+                    <Icon
+                      icon="emojione:flag-for-spain"
+                      width="30"
+                      height="30"
+                      inline={true}
+                    />
+                  )}
                 </a>
               </Link>
             ))}

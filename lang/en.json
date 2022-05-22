@@ -6,8 +6,13 @@
     "page.navbar.home": "Home",
     "page.navbar.projects":"Projects",
     "page.navbar.resume":"Resume",
-    "page.blockchainSection.title":"Blockchain Projects Certificates",
+    "page.blockchainSection.title":"Recent projects on Blockchain",
     "page.blockchainSection.opensea": "See in Opensea",
-    "page.blockchainSection.loading": "Loading..."
+    "page.blockchainSection.loading": "Loading...",
+    "page.resume.personalInformation": "Personal Information",
+    "page.resume.email": "Email address",
+    "page.resume.telephone": "Telephone",
+    "page.resume.workHistory": "Work Experience",
+    "page.resume.educationAndTrainings": "Academic Education and Trainings"
 
   }
