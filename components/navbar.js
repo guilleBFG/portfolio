@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
 import { Icon } from "@iconify/react";
+import LanguageButton from "./languageButton";
 
 function Navbar({ user }) {
   const [active, setActive] = useState(false);
@@ -110,40 +111,7 @@ function Navbar({ user }) {
                 </a>
               </Link>
             ))}
-            {[...locales].sort().map((locale) => (
-              <Link key={locale} href="/" locale={locale}>
-                <a
-                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center
-                bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500  hover:text-white "
-                >
-                  {locale === "pt" && (
-                    <Icon
-                      icon="emojione:flag-for-brazil"
-                      width="30"
-                      height="30"
-                      inline={true}
-                    />
-                  )}
-                  {locale === "en" && (
-                    <Icon
-                      icon="emojione:flag-england"
-                      width="30"
-                      height="30"
-                      inline={true}
-                    />
-                  )}
-
-                  {locale === "es" && (
-                    <Icon
-                      icon="emojione:flag-for-spain"
-                      width="30"
-                      height="30"
-                      inline={true}
-                    />
-                  )}
-                </a>
-              </Link>
-            ))}
+            <LanguageButton locales = {locales} />
           </div>
         </div>
       </nav>

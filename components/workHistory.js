@@ -6,6 +6,15 @@ import moment from "moment";
 function WorkHistory({ workHistory, locale }) {
   let jobTitle = "";
   let jobDescription = "";
+  let toDate = "";
+  
+  if(workHistory.toDate)
+  {
+    toDate = moment(workHistory.toDate).format("DD-MM-YYYY");
+  } else{
+    toDate = 'Current';
+  }
+  
   switch (locale) {
     case "es":
       jobTitle = workHistory?.jobTitle?.es;
@@ -29,7 +38,7 @@ function WorkHistory({ workHistory, locale }) {
       <div className="p-3">
         <div className=" w-full lg:max-w-full lg:flex  rounded-xl">
           <Image
-            className="h-48 lg:h-auto lg:w-48 flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            className="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-white border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
             width={200}
             height={100}
             src={urlFor(workHistory.companyLogo).url()}
@@ -38,7 +47,7 @@ function WorkHistory({ workHistory, locale }) {
           <div className="  w-full  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
             <div className="mb-8">
               <div className="font-bold text-white text-xl mb-2">
-                {`${jobTitle} ${moment(workHistory.fromDate).format("DD-MM-YYYY")}`}
+                {`${jobTitle} ${moment(workHistory.fromDate).format("DD-MM-YYYY")} - ${toDate}`}
 
               </div>
               <blockquote>
@@ -49,7 +58,8 @@ function WorkHistory({ workHistory, locale }) {
                   className="text-white text-base"
                   serializers={{
                     h1: (props) => <h1 {...props} />,
-                    h2: (props) => <h1 {...props} />,
+                    h2: (props) => <h2 {...props} />,
+                    bullet: (props) => <li {...props} />,
                   }}
                 />
               </blockquote>

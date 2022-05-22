@@ -29,7 +29,7 @@ function AdditionalTrainings({ additionalTraining, locale }) {
       <div className="p-3">
         <div className=" w-full lg:max-w-full lg:flex  rounded-xl">
           <Image
-            className="h-48 lg:h-auto lg:w-48 flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            className="h-48 lg:h-auto lg:w-48 bg-white flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
             width={200}
             height={100}
             src={urlFor(additionalTraining.institutionImage).url()}
