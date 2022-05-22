@@ -18,10 +18,10 @@ function Navbar({ user }) {
       title: intl.formatMessage({ id: "page.navbar.resume" }),
       url: "/resume",
     },
-    {
+    /*{
       title: intl.formatMessage({ id: "page.navbar.projects" }),
       url: "/projects",
-    },
+    },*/
   ];
 
   const handleClick = () => {

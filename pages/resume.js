@@ -36,7 +36,7 @@ function Resume({ resume }) {
   }
 
   return (
-    <div className="bg-gray-800 border-gray-700 text-lg text-white text-bold text-center">
+    <div className="mb-0 bg-gray-800 border-gray-700 text-lg text-white text-bold text-center">
       <div className="italic">
         <div className="p-3 bg-gray-800 border-gray-700  text-4xl text-white text-bold text-center">
           {resume.user?.fullName}
@@ -75,11 +75,11 @@ function Resume({ resume }) {
         </div>
       </div>
       {/* Education and aditional Trainings */}
-      <div>
+      <div className="mb-0">
         <div className="mt-5 mb-5 ml-4 bg-gray-800 border-gray-700 text-4xl text-white text-bold text-left">
           {intl.formatMessage({ id: "page.resume.educationAndTrainings" })}
         </div>
-        <div className="mt-5 mb-2 bg-gray-800 border-gray-700 text-4xl text-white text-bold text-left">
+        <div className="mt-5 mb-0 bg-gray-800 border-gray-700 text-4xl text-white text-bold text-left">
           {resume?.educations?.map((education, index) => {
             return (
               <Education education={education} key={index} locale={locale} />

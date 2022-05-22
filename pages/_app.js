@@ -3,6 +3,7 @@ import { IntlProvider } from "react-intl";
 import { Languages } from "../lang/languajes";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 function MyApp({ Component, pageProps }) {
   const { locale } = useRouter();
@@ -10,9 +11,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <IntlProvider locale={locale} messages={Languages[locale]}>
         <Navbar {...pageProps}/>
-        <main>
-          <Component {...pageProps} />
+        <main className="mb-0 bg-gray-800 border-gray-700">
+          <Component className="mb-0 bg-gray-800 border-gray-700" {...pageProps} />
         </main>
+        <Footer/>
       </IntlProvider>
     </>
   );
