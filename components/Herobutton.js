@@ -40,13 +40,13 @@ function Herobutton({ user }) {
           </div>
           <div></div>
           <div></div>
-          <div className="items-center pt-6 md:p-10 text-justify md:text-justify space-y-4 text-white">
+          <div className="items-center pt-6 md:p-10 text-center md:text-justify space-y-4 text-white">
             <blockquote>
               <PortableText
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                 content={content}
-                className=""
+                className="items-center sm:text-justify lg:text-center md:text-justify text-white"
                 serializers={{
                   h1: (props) => <h1 {...props} />,
                   h2: (props) => <h1 {...props} />,
