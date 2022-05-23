@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useIntl } from "react-intl";
-import NftCard from "./nftCard";
-import SkeletonCard from "./skeletonCard";
+import NftCard from "./NftCard";
+import SkeletonCard from "./SkeletonCard";
 
 function BlockchainNFTBlock({ user }) {
   const [nftData, setNftData] = useState([]);

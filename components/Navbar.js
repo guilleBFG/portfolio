@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
 import { Icon } from "@iconify/react";
-import LanguageButton from "./languageButton";
+import LanguageButton from "./LanguageButton";
 
 function Navbar({ user }) {
   const [active, setActive] = useState(false);
@@ -66,8 +66,8 @@ function Navbar({ user }) {
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link
-              key={user.telephone}
-              href={`https://web.whatsapp.com/send?phone=${user.telephone}`}
+              key={user?.telephone}
+              href={`https://web.whatsapp.com/send?phone=${user?.telephone}`}
             >
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300 "
@@ -77,7 +77,7 @@ function Navbar({ user }) {
                 <Icon width="30" height="30" icon="logos:whatsapp" />
               </a>
             </Link>
-            <Link key={user.github} href={user.github}>
+            <Link key={user?.github} href={user?.github}>
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
@@ -86,7 +86,7 @@ function Navbar({ user }) {
                 <Icon width="30" height="30" icon="jam:github-circle" />
               </a>
             </Link>
-            <Link key={user.email} href={`mailto:${user.email}`}>
+            <Link key={user?.email} href={`mailto:${user?.email}`}>
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
@@ -95,7 +95,7 @@ function Navbar({ user }) {
                 <Icon width="30" height="30" icon="logos:google-gmail" />
               </a>
             </Link>
-            <Link key={user.linkedIn} href={user.linkedIn}>
+            <Link key={user?.linkedIn} href={user?.linkedIn}>
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}

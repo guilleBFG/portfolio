@@ -2,8 +2,8 @@ import "../styles/globals.css";
 import { IntlProvider } from "react-intl";
 import { Languages } from "../lang/languajes";
 import { useRouter } from "next/router";
-import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const { locale } = useRouter();

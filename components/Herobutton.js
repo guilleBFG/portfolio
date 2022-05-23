@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { urlFor } from "../../lib/sanity";
+import { urlFor } from "../lib/sanity";
 import PortableText from "react-portable-text";
 import { useRouter } from "next/router";
 

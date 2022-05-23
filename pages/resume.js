@@ -1,10 +1,10 @@
 import { sanityClient } from "../lib/sanity";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
-import WorkHistory from "./components/workHistory";
-import Education from "./components/education";
-import AdditionalTrainings from "./components/additionalTrainings";
-import BlockchainNFTBlock from "./components/blockchainNFTBlock";
+import WorkHistory from "../components/WorkHistory";
+import Education from "../components/Education";
+import AdditionalTrainings from "../components/AdditionalTrainings";
+import BlockchainNFTBlock from "../components/BlockchainNFTBlock";
 const resumeQuery = `*[_type == 'resume'][0]{
   _id,
   user->,
@@ -103,7 +103,6 @@ function Resume({ resume }) {
 
 export default Resume;
 
-//export async function getStaticPaths() {}
 
 export async function getStaticProps() {
   const resume = await sanityClient.fetch(resumeQuery);

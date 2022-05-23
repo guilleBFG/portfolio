@@ -1,27 +1,36 @@
 import React from "react";
 import Image from "next/image";
 import PortableText from "react-portable-text";
-import {  urlFor } from "../../lib/sanity";
+import {  urlFor } from "../lib/sanity";
 import moment from "moment";
-function AdditionalTrainings({ additionalTraining, locale }) {
-  let degreeTitle = "";
-  let degreeDescription = "";
+function WorkHistory({ workHistory, locale }) {
+  let jobTitle = "";
+  let jobDescription = "";
+  let toDate = "";
+  
+  if(workHistory.toDate)
+  {
+    toDate = moment(workHistory.toDate).format("DD-MM-YYYY");
+  } else{
+    toDate = 'Current';
+  }
+  
   switch (locale) {
     case "es":
-      degreeTitle = additionalTraining?.degreeTitle?.es;
-      degreeDescription = additionalTraining?.degreeDescription?.es;
+      jobTitle = workHistory?.jobTitle?.es;
+      jobDescription = workHistory?.jobDescription?.es;
       break;
     case "en":
-      degreeTitle = additionalTraining?.degreeTitle?.en;
-      degreeDescription = additionalTraining?.degreeDescription?.en;
+      jobTitle = workHistory?.jobTitle?.en;
+      jobDescription = workHistory?.jobDescription?.en;
       break;
     case "pt":
-      degreeTitle = additionalTraining?.degreeTitle?.pt;
-      degreeDescription = additionalTraining?.degreeDescription?.pt;
+      jobTitle = workHistory?.jobTitle?.pt;
+      jobDescription = workHistory?.jobDescription?.pt;
       break;
     default:
-      degreeTitle = additionalTraining?.degreeTitle?.en;
-      degreeDescription = additionalTraining?.degreeDescription?.en;
+      jobTitle = workHistory?.jobTitle?.en;
+      jobDescription = workHistory?.jobDescription?.en;
       break;
   }
   return (
@@ -29,27 +38,28 @@ function AdditionalTrainings({ additionalTraining, locale }) {
       <div className="p-3">
         <div className=" w-full lg:max-w-full lg:flex  rounded-xl">
           <Image
-            className="h-48 lg:h-auto lg:w-48 bg-white flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            className="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-white border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
             width={200}
             height={100}
-            src={urlFor(additionalTraining.institutionImage).url()}
+            src={urlFor(workHistory.companyLogo).url()}
             alt="Company Logo"
           />
           <div className="  w-full  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
             <div className="mb-8">
               <div className="font-bold text-white text-xl mb-2">
-                {`${degreeTitle} ${moment(additionalTraining.fromDate).format("DD-MM-YYYY")}`}
+                {`${jobTitle} ${moment(workHistory.fromDate).format("DD-MM-YYYY")} - ${toDate}`}
 
               </div>
               <blockquote>
                 <PortableText
                   projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                   dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                  content={degreeDescription}
+                  content={jobDescription}
                   className="text-white text-base"
                   serializers={{
                     h1: (props) => <h1 {...props} />,
-                    h2: (props) => <h1 {...props} />,
+                    h2: (props) => <h2 {...props} />,
+                    bullet: (props) => <li {...props} />,
                   }}
                 />
               </blockquote>
@@ -61,4 +71,4 @@ function AdditionalTrainings({ additionalTraining, locale }) {
   );
 }
 
-export default AdditionalTrainings;
+export default WorkHistory;
