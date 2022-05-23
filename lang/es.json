@@ -8,7 +8,12 @@
     "page.navbar.resume":"CV",
     "page.blockchainSection.title":"Proyectos de Blockchain Certificados NFT",
     "page.blockchainSection.opensea": "Ver en Opensea",
-    "page.blockchainSection.loading": "Cargando..."
-
+    "page.blockchainSection.loading": "Cargando...",
+    "page.resume.personalInformation": "Informacion Personal",
+    "page.resume.email": "Email",
+    "page.resume.telephone": "Telefono",
+    "page.resume.workHistory": "Experiencia Laboral",
+    "page.resume.educationAndTrainings": "Educación Academica y Cursos",
+    "page.navbar.language":"Lenguajes"
 
   }

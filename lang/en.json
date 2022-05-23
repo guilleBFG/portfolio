@@ -13,6 +13,7 @@
     "page.resume.email": "Email address",
     "page.resume.telephone": "Telephone",
     "page.resume.workHistory": "Work Experience",
-    "page.resume.educationAndTrainings": "Academic Education and Trainings"
+    "page.resume.educationAndTrainings": "Academic Education and Trainings",
+    "page.navbar.language":"Language"
 
   }
