@@ -77,7 +77,7 @@ function Navbar({ user }) {
                 <Icon width="30" height="30" icon="logos:whatsapp" />
               </a>
             </Link>
-            <Link key={user?.github} href={user?.github}>
+            <Link key={user?.github} href={user?.github ?? ''}>
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
@@ -95,7 +95,7 @@ function Navbar({ user }) {
                 <Icon width="30" height="30" icon="logos:google-gmail" />
               </a>
             </Link>
-            <Link key={user?.linkedIn} href={user?.linkedIn}>
+            <Link key={user?.linkedIn} href={user?.linkedIn ?? ''}>
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300"
                 target={"_blank"}
