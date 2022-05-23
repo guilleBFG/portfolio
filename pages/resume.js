@@ -107,5 +107,5 @@ export default Resume;
 export async function getStaticProps() {
   const resume = await sanityClient.fetch(resumeQuery);
   const user = resume.user;
-  return { props: { resume, user } };
+  return { props: { resume, user }, revalidate: 300, };
 }

@@ -31,5 +31,5 @@ export default function Home({ user  }) {
 
 export async function getStaticProps() {
   const user = await sanityClient.fetch(userQuery);
-  return { props: { user } };
+  return { props: { user }, revalidate: 300, };
 }
