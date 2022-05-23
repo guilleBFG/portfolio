@@ -1,11 +1,10 @@
-import React from "react";
 import { sanityClient } from "../lib/sanity";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
-import WorkHistory from "../components/workHistory";
-import Education from "../components/education";
-import AdditionalTrainings from "../components/additionalTrainings";
-import BlockchainNFTBlock from "../components/blockchainNFTBlock";
+import WorkHistory from "./components/workHistory";
+import Education from "./components/education";
+import AdditionalTrainings from "./components/additionalTrainings";
+import BlockchainNFTBlock from "./components/blockchainNFTBlock";
 const resumeQuery = `*[_type == 'resume'][0]{
   _id,
   user->,

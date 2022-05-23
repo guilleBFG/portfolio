@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { sanityClient } from "../lib/sanity";
 import { useIntl } from "react-intl";
-import Herobutton from "../components/herobutton";
-import BlockchainNFTBlock from "../components/blockchainNFTBlock";
+import Herobutton from "./components/herobutton";
+import BlockchainNFTBlock from "./components/blockchainNFTBlock";
 
 const userQuery = `*[_type == 'user'][0]`;
 export default function Home({ user  }) {
