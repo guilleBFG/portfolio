@@ -45,8 +45,8 @@ function WorkHistory({ workHistory, locale }) {
             alt="Company Logo"
           />
           <div className="  w-full  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <div className="mb-8">
-              <div className="font-bold text-white text-xl mb-2">
+            <div className="mb-8 sm:text-center">
+              <div className="font-bold text-white text-xl mb-2 sm:text-center lg:text-left">
                 {`${jobTitle} ${moment(workHistory.fromDate).format("DD-MM-YYYY")} - ${toDate}`}
 
               </div>
@@ -55,7 +55,7 @@ function WorkHistory({ workHistory, locale }) {
                   projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                   dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                   content={jobDescription}
-                  className="text-white text-base"
+                  className="text-white text-base sm:text-center lg:text-left"
                   serializers={{
                     h1: (props) => <h1 {...props} />,
                     h2: (props) => <h2 {...props} />,

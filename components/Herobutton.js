@@ -27,7 +27,7 @@ function Herobutton({ user }) {
   return (
     <>
       <figure className="flex flex-wrap bg-gray-800 border-gray-700 p-8 md:p-0 bg-black-800 items-center">
-        <div className="grid grid-cols-3 gap-4 ">
+        <div className="lg:grid lg:grid-cols-3 lg:gap-4 ">
           <div></div>
           <div className="mx-auto bg-gray-800 border-gray-700 text-base text-white text-bold text-center">
             <Image
