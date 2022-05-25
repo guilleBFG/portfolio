@@ -12,7 +12,7 @@ export default function Home({ user  }) {
   });
 
   return (
-    <div className="bg-gray-800 border-gray-700">
+    <div className="bg-gray-800 border-gray-700 w-full h-full">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
