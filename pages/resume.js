@@ -5,6 +5,10 @@ import WorkHistory from "../components/WorkHistory";
 import Education from "../components/Education";
 import AdditionalTrainings from "../components/AdditionalTrainings";
 import BlockchainNFTBlock from "../components/BlockchainNFTBlock";
+import { Icon } from "@iconify/react";
+import { useEffect, useState } from "react";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import ResumePDF from "../components/PDF/ResumePDF";
 const resumeQuery = `*[_type == 'resume'][0]{
   _id,
   user->,
@@ -14,6 +18,8 @@ const resumeQuery = `*[_type == 'resume'][0]{
 }`;
 
 function Resume({ resume }) {
+  const [isClient, setIsClient] = useState(false);
+
   const { locale } = useRouter();
 
   const intl = useIntl();
@@ -34,8 +40,32 @@ function Resume({ resume }) {
       break;
   }
 
+  useEffect(() => {
+    setIsClient(true);
+  });
+
   return (
     <div className="mb-0 bg-gray-800 border-gray-700 text-lg text-white text-bold text-center">
+      {isClient && (
+        <>
+          <PDFDownloadLink document={<ResumePDF />}>
+            <button
+              type="button"
+              className="p-3 rounded-lg inline-flex bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+            >
+              <span className="inline-flex ">
+                <Icon
+                  width="30"
+                  height="30"
+                  icon="vscode-icons:file-type-pdf2"
+                />
+                Download PDF
+              </span>
+            </button>
+          </PDFDownloadLink>
+        </>
+      )}
+
       <div className="italic">
         <div className="p-3 bg-gray-800 border-gray-700  text-4xl text-white text-bold text-center">
           {resume.user?.fullName}
@@ -94,7 +124,6 @@ function Resume({ resume }) {
             );
           })}
           <BlockchainNFTBlock user={resume?.user} />
-
         </div>
       </div>
     </div>
@@ -103,9 +132,8 @@ function Resume({ resume }) {
 
 export default Resume;
 
-
 export async function getStaticProps() {
   const resume = await sanityClient.fetch(resumeQuery);
   const user = resume.user;
-  return { props: { resume, user }, revalidate: 300, };
+  return { props: { resume, user }, revalidate: 300 };
 }

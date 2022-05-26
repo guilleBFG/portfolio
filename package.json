@@ -13,6 +13,7 @@
     "@heroicons/react": "^1.0.6",
     "@iconify/react": "^3.2.1",
     "@portabletext/react": "^1.0.6",
+    "@react-pdf/renderer": "^2.1.1",
     "@sanity/image-url": "^1.0.1",
     "dotenv": "^16.0.1",
     "moment": "^2.29.3",
