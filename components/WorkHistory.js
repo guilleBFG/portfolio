@@ -38,9 +38,9 @@ function WorkHistory({ workHistory, locale }) {
       <div className="p-3">
         <div className=" w-full lg:max-w-full lg:flex  rounded-xl">
           <Image
-            className="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-white border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-            width={200}
-            height={100}
+            className="p-3 h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-white border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            width={250}
+            height={50}
             src={urlFor(workHistory.companyLogo).url()}
             alt="Company Logo"
           />
