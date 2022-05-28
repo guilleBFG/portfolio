@@ -6,9 +6,9 @@ import Education from "../components/Education";
 import AdditionalTrainings from "../components/AdditionalTrainings";
 import BlockchainNFTBlock from "../components/BlockchainNFTBlock";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import ResumePDF from "../components/PDF/ResumePDF";
+
+import createPDF from "../components/PDF/CreatePDF";
+
 const resumeQuery = `*[_type == 'resume'][0]{
   _id,
   user->,
@@ -18,8 +18,6 @@ const resumeQuery = `*[_type == 'resume'][0]{
 }`;
 
 function Resume({ resume }) {
-  const [isClient, setIsClient] = useState(false);
-
   const { locale } = useRouter();
 
   const intl = useIntl();
@@ -40,32 +38,19 @@ function Resume({ resume }) {
       break;
   }
 
-  useEffect(() => {
-    setIsClient(true);
-  });
+  const generatePDF = ()=>{
+    const createPdf = createPDF();
+    createPdf.addPersInfo(resume.user, intl);
+    createPdf.addWorkExperience(resume.workhistorys, locale,intl);
+    createPdf.addEducation(resume.educations, locale,intl);
+    createPdf.addTrainings(resume.additionalTrainings, locale);
 
+    createPdf.savePDF(`${resume.user?.fullName} (${locale}).pdf`);
+
+  }
   return (
     <div className="mb-0 bg-gray-800 border-gray-700 text-lg text-white text-bold text-center">
-      {isClient && (
-        <>
-          <PDFDownloadLink document={<ResumePDF />}>
-            <button
-              type="button"
-              className="p-3 rounded-lg inline-flex bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
-            >
-              <span className="inline-flex ">
-                <Icon
-                  width="30"
-                  height="30"
-                  icon="vscode-icons:file-type-pdf2"
-                />
-                Download PDF
-              </span>
-            </button>
-          </PDFDownloadLink>
-        </>
-      )}
-
+     
       <div className="italic">
         <div className="p-3 bg-gray-800 border-gray-700  text-4xl text-white text-bold text-center">
           {resume.user?.fullName}
@@ -85,6 +70,18 @@ function Resume({ resume }) {
         <div className="p-2 bg-gray-800 border-gray-700 text-3xl text-white text-bold text-center">
           {jobTitle}
         </div>
+      </div>
+      <div className="text-left ml-4">
+        <button
+          type="button"
+          onClick={generatePDF}
+          className="p-3 rounded-lg inline-flex bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+        >
+          <span className="inline-flex ">
+            <Icon width="30" height="30" icon="vscode-icons:file-type-pdf2" />
+            {intl.formatMessage({ id: "page.resume.downloadPDF" })}
+          </span>
+        </button>
       </div>
       {/*Work Experience */}
       <div>

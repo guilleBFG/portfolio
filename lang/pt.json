@@ -14,5 +14,9 @@
   "page.resume.telephone": "Telefono",
   "page.resume.workHistory": "Experiência de trabalho",
   "page.resume.educationAndTrainings": "Educação Acadêmica e Cursos",
-  "page.navbar.language":"Idioma"
+  "page.navbar.language":"Idioma",
+  "page.resume.downloadPDF":"Baixar em PDF",
+  "page.resume.current":"Atualmente",
+  "page.pdf.at":"en",
+  "page.my.site":"Mi sitio web"
   }

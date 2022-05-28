@@ -28,9 +28,9 @@ function Education({ education, locale }) {
     <>
       <div className="p-3">
         <div className=" w-full lg:max-w-full   rounded-xl">
-          <div className="ml-4 ">
+          <div className="ml-4 bg-white lg:w-52">
             <Image
-              className=" h-48 lg:h-auto lg:w-48 flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover border rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
               width={200}
               height={100}
               src={urlFor(education.institutionImage).url()}

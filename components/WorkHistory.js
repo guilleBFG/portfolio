@@ -3,16 +3,19 @@ import Image from "next/image";
 import PortableText from "react-portable-text";
 import {  urlFor } from "../lib/sanity";
 import moment from "moment";
+import { useIntl } from "react-intl";
+
 function WorkHistory({ workHistory, locale }) {
   let jobTitle = "";
   let jobDescription = "";
   let toDate = "";
-  
+  const intl = useIntl();
+
   if(workHistory.toDate)
   {
     toDate = moment(workHistory.toDate).format("DD-MM-YYYY");
   } else{
-    toDate = 'Current';
+    toDate = intl.formatMessage({ id: "page.resume.current" });
   }
   
   switch (locale) {

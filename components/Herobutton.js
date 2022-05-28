@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 function Herobutton({ user }) {
   const { locale } = useRouter();
+
   let content = "";
   switch (locale) {
     case "es":
@@ -53,7 +54,9 @@ function Herobutton({ user }) {
                 }}
               />
             </blockquote>
-           
+          </div>
+          <div>
+            
           </div>
         </div>
       </figure>

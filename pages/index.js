@@ -21,7 +21,8 @@ export default function Home({ user  }) {
         {/* Add hreflang links */}
         <link rel="alternate" href="/" hrefLang="x-default" />
         <link rel="alternate" href="/" hrefLang="en" />
-        <link rel="alternate" href="/es" hrefLang="fr" />
+        <link rel="alternate" href="/es" hrefLang="es" />
+        <link rel="alternate" href="/pt" hrefLang="pt" />
       </Head>
       <Herobutton user={user} key="heroButton"/>
       <BlockchainNFTBlock user={user} />
