@@ -50,6 +50,14 @@ function createPDF() {
       yPosition,
       `${intl.formatMessage({ id: "page.resume.email" })}: ${user.email}`
     );
+    updateHeight(smallHeight);
+    doc.setFont(fontType, "bold");
+    doc.setTextColor(colorDarkGrey);
+    doc.text(
+      xPosition,
+      yPosition,
+      `${intl.formatMessage({ id: "page.my.site" })}: https://gwester.com.ar`
+    );
     updateHeight(verySmallHeight);
 
     // line
