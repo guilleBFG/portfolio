@@ -11,7 +11,8 @@ It was a really fun project to develop
 
 First, run the development server:
 
-```npm install 
+```
+npm install 
 npm run dev
 ```
 
