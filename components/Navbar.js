@@ -67,7 +67,7 @@ function Navbar({ user }) {
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link
               key={user?.telephone}
-              href={`https://web.whatsapp.com/send?phone=${user?.telephone}`}
+              href={`https://wa.me/${user?.telephone}`}
             >
               <a
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center  bg-gradient-to-r  hover:from-pink-500 hover:to-pink-300 "

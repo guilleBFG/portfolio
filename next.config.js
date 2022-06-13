@@ -3,7 +3,6 @@ const nextConfig = {
   images:{
     domains: ["cdn.sanity.io", "tokens.buildspace.so"],
   },
-  reactStrictMode: false,
   i18n:{
     locales: ["en","es","pt"],
     defaultLocale: "en",
