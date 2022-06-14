@@ -40,7 +40,7 @@ export default function Home({ user }) {
         />
         <meta
           property="og:image"
-          content="https://www.gwester.com.ar/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F1x1a8dhr%2Fproduction%2F251dbdb0a19cc1bcc70f340e295dd50df2ee6971-4000x6000.jpg%3Frect%3D750%2C837%2C1265%2C1490&w=256&q=75"
+          content="/favicon.ico"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
