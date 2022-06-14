@@ -16,45 +16,6 @@ export default function Home({ user }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta
-          name="description"
-          content="Check out my resume and work experience"
-        />
-
-        <meta itemProp="name" content="Guille's Resume" />
-        <meta
-          itemProp="description"
-          content="Check out my resume and work experience"
-        />
-        <meta
-          itemProp="image"
-          content="/favicon.ico"
-        />
-
-        <meta property="og:url" content="https://www.gwester.com.ar/resume" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Guille's Resume" />
-        <meta
-          property="og:description"
-          content="Check out my resume and work experience"
-        />
-        <meta
-          property="og:image"
-          content="/favicon.ico"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guille's Resume" />
-        <meta
-          name="twitter:description"
-          content="Check out my resume and work experience"
-        />
-        <meta
-          name="twitter:image"
-          content="/favicon.ico"
-        />
-
-        <link rel="icon" href="/favicon.ico" />
 
         {/* Add hreflang links */}
         <link rel="alternate" href="/" hrefLang="x-default" />
