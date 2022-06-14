@@ -3,6 +3,8 @@
   "page.home.head.meta.description": "Portfolio of projects CV and letter of presentation",
   "page.home.title": "Guillermo Wester Portfolio",
   "page.home.description": "",
+  "page.resume.head.title": "Guille's CV",
+  "page.resume.head.meta.description": "Here you can see my CV and save it as PDF",
   "page.navbar.home": "Home",
   "page.navbar.projects":"Projects",
   "page.navbar.resume":"Resume",

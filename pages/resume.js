@@ -1,4 +1,5 @@
 import { sanityClient } from "../lib/sanity";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
 import WorkHistory from "../components/WorkHistory";
@@ -21,6 +22,12 @@ function Resume({ resume }) {
   const { locale } = useRouter();
 
   const intl = useIntl();
+
+  const title = intl.formatMessage({ id: "page.home.head.title" });
+  const description = intl.formatMessage({
+    id: "page.resume.head.meta.description",
+  });
+
 
   let jobTitle = "";
   switch (locale) {
@@ -50,7 +57,10 @@ function Resume({ resume }) {
   }
   return (
     <div className="mb-0 bg-gray-800 border-gray-700 text-lg text-white text-bold text-center">
-     
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Head>
       <div className="italic">
         <div className="p-3 bg-gray-800 border-gray-700  text-4xl text-white text-bold text-center">
           {resume.user?.fullName}
