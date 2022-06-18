@@ -26,41 +26,25 @@ function Herobutton({ user }) {
   }
 
   return (
-    <>
-      <figure className="flex flex-wrap bg-gray-800 border-gray-700 p-8 md:p-0 bg-black-800 items-center">
-        <div className="lg:grid lg:grid-cols-3 lg:gap-4 ">
-          <div></div>
-          <div className="mx-auto bg-gray-800 border-gray-700 text-base text-white text-bold text-center">
-            <Image
-              className="mx-auto w-24 h-24 rounded-full"
-              width={150}
-              height={150}
-              src={urlFor(user.profilePicture).url()}
-              alt="Profile Picture"
-            />
-          </div>
-          <div></div>
-          <div></div>
-          <div className="items-center pt-6 md:p-10 text-center md:text-justify space-y-4 text-white">
-            <blockquote>
-              <PortableText
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                content={content}
-                className="items-center sm:text-justify lg:text-center md:text-justify text-white"
-                serializers={{
-                  h1: (props) => <h1 {...props} />,
-                  h2: (props) => <h1 {...props} />,
-                }}
-              />
-            </blockquote>
-          </div>
-          <div>
-            
-          </div>
-        </div>
-      </figure>
-    </>
+    <div className="w-screen flex flex-col bg-gray-800 border-gray-700  md:p-0 bg-black-800 items-center">
+      <Image
+        className="w-24 h-24 rounded-full"
+        width={150}
+        height={150}
+        src={urlFor(user.profilePicture).url()}
+        alt="Profile Picture"
+      />
+      <PortableText
+        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+        content={content}
+        className="pt-8 text-center text-white"
+        serializers={{
+          h1: (props) => <h1 {...props} />,
+          h2: (props) => <h1 {...props} />,
+        }}
+      />
+    </div>
   );
 }
 
