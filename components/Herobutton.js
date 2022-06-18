@@ -38,7 +38,7 @@ function Herobutton({ user }) {
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
         content={content}
-        className="pt-8 text-center text-white"
+        className="pt-8 text-center text-white max-w-xl"
         serializers={{
           h1: (props) => <h1 {...props} />,
           h2: (props) => <h1 {...props} />,
